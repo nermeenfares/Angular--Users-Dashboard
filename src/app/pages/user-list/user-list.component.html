@@ -1,0 +1,18 @@
+<div>
+  <h1>Users</h1>
+  <div *ngIf="users.length">
+    <ul>
+      <li *ngFor="let user of users">
+        <img [src]="user.avatar" alt="{{user.first_name}}'s avatar" width="50" height="50">
+        <p>ID: {{user.id}}</p>
+        <p>Name: {{user.first_name}} {{user.last_name}}</p>
+        <p>Email: {{user.email}}</p>
+      </li>
+    </ul>
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+  <!-- <div *ngIf="!users.length">
+    <p>No users available.</p>
+  </div> -->
+</div>
